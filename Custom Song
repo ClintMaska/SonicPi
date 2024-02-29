@@ -1,0 +1,74 @@
+# Custom Song
+use_bpm 130
+use_synth :blade
+
+wha = "C:/Users/clint_maska/Desktop/Playboi Carti - WHAT Sound EffectAdlib.mp3"
+
+sample "C:/Users/clint_maska/Downloads/Drake_Stafford.mp3"
+sleep 8
+
+live_loop:money_longer do
+  #measure 3
+  play :f3,amp: 2
+  sleep 1
+  play :c4,amp: 2
+  sleep 1
+  play :db4,amp: 2
+  sleep 1
+  play :eb4,amp: 2
+  sleep 1
+  #measure 4
+  play :f4,amp: 2
+  sleep 1
+  play :ab4,amp: 2
+  sleep 1
+  play :c5,amp: 2
+  sleep 1
+  play :db5,amp: 2
+  sleep 1
+  #measure 5
+  play :eb4,amp: 2
+  sleep 1
+  play :f4,amp: 2
+  sleep 1
+  play :c5,amp: 2
+  sleep 1
+  play :ab4,amp: 2
+  sleep 1
+  #measure 6
+  sample wha
+  play :db5,amp: 2
+  sleep 1
+  play :eb5,amp: 2
+  sleep 1
+  play :f5,amp: 2
+  sleep 1
+  play :eb5,amp: 2
+  sleep 1
+end
+
+sleep 16
+
+with_fx :slicer do
+  live_loop:bass do
+    sample :bass_woodsy_c, amp: 0.5
+    sleep 5
+  end
+end
+
+sleep 16
+
+live_loop:clap do
+  sleep 2
+  sample :drum_heavy_kick,amp: 1.5
+  sleep 2
+end
+
+live_loop:hihat do
+  sample :hat_gem
+  sleep 0.25
+  sample :hat_gem
+  sleep 0.25
+  sample :hat_gem
+  sleep 0.5
+end
