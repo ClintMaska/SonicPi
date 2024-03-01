@@ -2,73 +2,129 @@
 use_bpm 130
 use_synth :blade
 
+x=2
+
 wha = "C:/Users/clint_maska/Desktop/Playboi Carti - WHAT Sound EffectAdlib.mp3"
 
 sample "C:/Users/clint_maska/Downloads/Drake_Stafford.mp3"
 sleep 8
 
 live_loop:money_longer do
-  #measure 3
-  play :f3,amp: 2
-  sleep 1
-  play :c4,amp: 2
-  sleep 1
-  play :db4,amp: 2
-  sleep 1
-  play :eb4,amp: 2
-  sleep 1
-  #measure 4
-  play :f4,amp: 2
-  sleep 1
-  play :ab4,amp: 2
-  sleep 1
-  play :c5,amp: 2
-  sleep 1
-  play :db5,amp: 2
-  sleep 1
-  #measure 5
-  play :eb4,amp: 2
-  sleep 1
-  play :f4,amp: 2
-  sleep 1
-  play :c5,amp: 2
-  sleep 1
-  play :ab4,amp: 2
-  sleep 1
-  #measure 6
-  sample wha
-  play :db5,amp: 2
-  sleep 1
-  play :eb5,amp: 2
-  sleep 1
-  play :f5,amp: 2
-  sleep 1
-  play :eb5,amp: 2
-  sleep 1
+  8.times do
+    #measure 3
+    play :f3,amp: x
+    sleep 1
+    play :c4,amp: x
+    sleep 1
+    play :db4,amp: x
+    sleep 1
+    play :eb4,amp: x
+    sleep 1
+    #measure 4
+    play :f4,amp: x
+    sleep 1
+    play :ab4,amp: x
+    sleep 1
+    play :c5,amp: x
+    sleep 1
+    play :db5,amp: x
+    sleep 1
+    #measure 5
+    play :eb4,amp: x
+    sleep 1
+    play :f4,amp: x
+    sleep 1
+    play :c5,amp: x
+    sleep 1
+    play :ab4,amp: x
+    sleep 1
+    #measure 6
+    sample wha
+    play :db5,amp: x
+    sleep 1
+    play :eb5,amp: x
+    sleep 1
+    play :f5,amp: x
+    sleep 1
+    play :eb5,amp: x
+    sleep 1
+  end
+  stop
 end
 
-sleep 16
+sleep 32
 
 with_fx :slicer do
   live_loop:bass do
-    sample :bass_woodsy_c, amp: 0.5
-    sleep 5
+    18.times do
+      sample :bass_woodsy_c,amp: 0.75
+      sleep 5
+    end
+    stop
   end
 end
 
 sleep 16
 
 live_loop:clap do
-  sleep 2
-  sample :drum_heavy_kick,amp: 1.5
-  sleep 2
+  20.times do
+    sleep 2
+    sample :drum_heavy_kick,amp: 1.5
+    sleep 2
+  end
+  stop
 end
 
+sleep 16
+
 live_loop:hihat do
-  sample :hat_gem
-  sleep 0.25
-  sample :hat_gem
-  sleep 0.25
-  sample :hat_gem
-  sleep 0.5
+  64.times do
+    sample :hat_gem
+    sleep 0.25
+    sample :hat_gem
+    sleep 0.25
+    sample :hat_gem
+    sleep 0.5
+  end
+  stop
+end
+
+sleep 64
+
+live_loop:outrow do
+  1.times do
+    #measure 3
+    play :f3,amp: x
+    sleep 1
+    play :c4,amp: x
+    sleep 1
+    play :db4,amp: x
+    x=x-0.5
+    sleep 1
+    play :eb4,amp: x
+    sleep 1
+    #measure 4
+    play :f4,amp: x
+    sleep 1
+    play :ab4,amp: x
+    x=x-0.5
+    sleep 1
+    play :c5,amp: x
+    sleep 1
+    play :db5,amp: x
+    sleep 1
+    #measure 5
+    play :eb4,amp: x
+    x=x-0.5
+    sleep 1
+    play :f4,amp: x
+    sleep 1
+    play :c5,amp: x
+    sleep 1
+    play :ab4,amp: x
+    x=x-0.5
+    sleep 1
+    sample wha
+  end
+  stop
 end
