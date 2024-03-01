@@ -4,9 +4,9 @@ use_synth :blade
 
 x=2
 
-wha = "C:/Users/clint_maska/Desktop/Playboi Carti - WHAT Sound EffectAdlib.mp3" #beginning of Watch by Travis Scott
+wha = "C:/Users/clint_maska/Desktop/Playboi Carti - WHAT Sound EffectAdlib.mp3" #Playboi Carti saying WHA
 
-sample "C:/Users/clint_maska/Downloads/Drake_Stafford.mp3" #Playboi Carti saying WHA
+sample "C:/Users/clint_maska/Downloads/Drake_Stafford.mp3" #beginning of Watch by Travis Scott
 sleep 8
 
 live_loop:money_longer do
