@@ -1,0 +1,87 @@
+# CHALLENGE Custom Song - Vent by Baby Keem
+use_bpm 115
+use_synth :hoover
+x = 1.5
+
+intro = "C:/Users/clint_maska/Documents/Audacity/GTA San Andreas Theme Song ♫ [BEST QUALITY].mp3"
+
+bass = "C:/Users/clint_maska/Documents/Audacity/Baby Keem vent Type Beat  Nonsense (FREE FOR PROFIT).mp3"
+
+define:vent do |x1,x2,x3,x4|
+  play x1
+  sleep 1
+  play x2, amp: x4
+  sleep 1
+  play x3, amp: 2, sustain: 0.5
+  sleep 2
+end
+
+define:drum do
+  sample :hat_gem, amp: x
+  sleep 0.5
+  sample :hat_gem, amp: x
+  sleep 0.5
+  sample :hat_gem, amp: x
+  sleep 0.25
+  sample :hat_gem, amp: x
+  sleep 0.25
+end
+#begins here
+
+sample intro, amp: x
+sleep 7
+
+3.times do
+  vent :ab3, :ab2, :ab1, 1
+end
+
+3.times do
+  drum
+end
+
+x = x - 0.5
+
+live_loop:main1 do
+  6.times do
+    vent:ab3, :ab2, :ab1, 0
+  end
+  stop
+end
+
+live_loop:hihat do
+  32.times do
+    drum
+  end
+  stop
+end
+
+sleep 24
+
+live_loop:main2 do
+  6.times do
+    vent:ab3, :ab2, :ab1, 1
+  end
+  stop
+end
+
+sleep 24
+
+live_loop:boost do
+  5.times do
+    sample bass, amp: x
+    sleep 8
+  end
+  stop
+end
+
+sleep 16
+
+16.times do
+  drum
+end
+
+sleep 8
+
+x = x - 0.5
+
+sample bass, amp: x
